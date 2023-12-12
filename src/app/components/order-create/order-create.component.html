@@ -1,0 +1,71 @@
+<div mat-dialog-title>
+    <h1>Nueva orden</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit) = "onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div>
+            <h2>Información del cliente</h2>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" placeholder="Alexander" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput matInput type="text" placeholder="Campos" formControlName="lastName">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="alex@gmail.com" formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput matInput type="tel" placeholder="00000000" formControlName="tel">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <h2>Información del pedido</h2>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="state">
+                        <mat-option *ngFor="let val of status" [value]="val">
+                            {{val}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Producto</mat-label>
+                    <input matInput type="text" placeholder="Manzana" formControlName="productName">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Cantidad</mat-label>
+                    <input matInput type="number" formControlName="amount">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput type="number" formControlName="price">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Tipo de pago</mat-label>
+                    <mat-select formControlName="payType">
+                        <mat-option *ngFor="let val of payType" [value]="val">
+                            {{val}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button>Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">Guardar</button>
+    </div>
+</form>
