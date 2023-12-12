@@ -5,6 +5,7 @@ import { OrdersService } from './services/orders.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,12 @@ export class AppComponent implements OnInit {
       }
     })
 
+  }
+
+  openOrderDetail(orderId: number) {
+    this._dialog.open(OrderDetailComponent, {
+      data: { orderId }
+    });
   }
 
   getOrderList() {

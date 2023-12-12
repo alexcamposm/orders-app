@@ -1,0 +1,24 @@
+<div *ngIf="orderDetails">
+    <h2>Detalles del Pedido {{ orderDetails.id }}</h2>
+    
+    <div>
+      <h3>Información del Cliente</h3>
+      <p>Nombre: {{ orderDetails.firstName }} {{ orderDetails.lastName }}</p>
+      <p>Email: {{ orderDetails.email }}</p>
+      <p>Teléfono: {{ orderDetails.tel }}</p>
+    </div>
+
+    <div>
+      <h3>Información del Pedido</h3>
+      <p>Estado: {{ orderDetails.state }}</p>
+      <p>Producto: {{ orderDetails.productName }}</p>
+      <p>Cantidad: {{ orderDetails.amount }}</p>
+      <p>Precio Unitario: {{ orderDetails.price }}</p>
+    </div>
+
+    <div>
+      <h3>Información de Pago</h3>
+      <p>Tipo de Pago: {{ orderDetails.payType }}</p>
+    </div>
+
+  </div>

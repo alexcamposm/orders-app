@@ -1,7 +1,7 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>Control de ordenes</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="primary" (click)="openOrdersList()">
+  <button mat-raised-button (click)="openOrdersList()">
     Crear orden
   </button>
 </mat-toolbar>
@@ -43,7 +43,7 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
         <td mat-cell *matCellDef="let row"> 
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="openOrderDetail(row.id)">
             <mat-icon>visibility</mat-icon>
           </button>
           <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">

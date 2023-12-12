@@ -40,6 +40,18 @@
       "price": 3000,
       "payType": "Efectivo",
       "id": 2
+    },
+    {
+      "firstName": "oscar",
+      "lastName": "araya",
+      "email": "oscar@gmail.com",
+      "tel": "8907654",
+      "state": "Recibido",
+      "productName": "cas",
+      "amount": 90,
+      "price": 670,
+      "payType": "Crédito",
+      "id": 3
     }
   ]
 }

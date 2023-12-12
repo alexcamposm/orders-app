@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 
 
 
@@ -28,7 +29,8 @@ import { MatSortModule } from '@angular/material/sort';
   declarations: [
     AppComponent,
     OrdersListComponent,
-    OrderCreateComponent
+    OrderCreateComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
