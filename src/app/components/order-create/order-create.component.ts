@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
   selector: 'app-order-create',
@@ -20,7 +22,12 @@ export class OrderCreateComponent {
     "Efectivo"
   ];
 
-  constructor(private _fb: FormBuilder) {
+  constructor(
+    private _fb: FormBuilder,
+    private _empService: OrdersService,
+    private _dialogRef: MatDialogRef<OrderCreateComponent>
+  ) {
+
     this.empForm = this._fb.group({
       firstName: '',
       lastName: '',
@@ -29,15 +36,23 @@ export class OrderCreateComponent {
       state: '',
       productName: '',
       amount: '',
-      price:  '',
+      price: '',
       payType: ''
 
     });
   }
 
   onFormSubmit() {
-    if(this.empForm.valid) {
-      console.log(this.empForm.value);
+    if (this.empForm.valid) {
+      this._empService.addOrder(this.empForm.value).subscribe({
+        next: (val: any) => {
+          alert('Orden guardada con exito')
+          this._dialogRef.close(true);
+        },
+        error: (err: any) => {
+          console.error(err)
+        }
+      })
     }
   }
 }

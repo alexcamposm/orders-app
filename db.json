@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "orders": [
+    {
+      "firstName": "Alex",
+      "lastName": "Campos",
+      "email": "alex@gmail.com",
+      "tel": "354545",
+      "state": "En preparación",
+      "productName": "naranja",
+      "amount": 8,
+      "price": 90,
+      "payType": "Débito",
+      "id": 1
+    },
+    {
+      "firstName": "maria",
+      "lastName": "Araya",
+      "email": "maria@gmail.com",
+      "tel": "6546549",
+      "state": "Entregado",
+      "productName": "uva",
+      "amount": 10,
+      "price": 3000,
+      "payType": "Efectivo",
+      "id": 2
+    }
+  ]
+}

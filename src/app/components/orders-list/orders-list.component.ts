@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./orders-list.component.scss']
 })
 export class OrdersListComponent {
+
 }
